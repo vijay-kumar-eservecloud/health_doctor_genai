@@ -111,4 +111,23 @@ health_doctor_genai/
 ## Start FastAPI server
 - uvicorn main:app --reload --env-file=.env.local
 
+# Example Test Questions
+- "What is the average BMI of male patients over age 40?"
+- "How many patients have high stress levels and abnormal blood pressure?"
+- "Average daily step count for patients diagnosed with CKD."
+- "Compare hemoglobin levels of smokers vs non-smokers."
+- "For patients with BMI > 30, what is the mean salt intake?"
+
+# Future Enhancements
+- Add user authentication
+- Support time-series analysis (steps trends)
+- Add caching layer for repeated queries
+- Build a Streamlit UI for non-technical users
+- Add fine-tuning dataset for more accurate NL→SQL mapping
+
+# Author
+
+Vijay Kumar
+- AI Engineer | FastAPI | GenAI | RAG | LLM-Orchestration
+- GitHub: https://github.com/vijay-kumar-eservecloud
 
