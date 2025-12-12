@@ -1,0 +1,25 @@
+# database/connection.py
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+import os
+
+# DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql+psycopg2://postgres:password@localhost:5432/health_care_db"
+)
+
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL environment variable is not set.")
+engine = create_engine(
+    DATABASE_URL  # No connect_args needed
+)
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+def get_session():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

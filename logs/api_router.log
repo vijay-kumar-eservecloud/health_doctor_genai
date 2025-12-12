@@ -1,0 +1,41 @@
+2025-12-11 13:09:39,596 - routers.py:26 - [WARNING] - SQL generation error: Multiple statements/semicolons are not allowed
+2025-12-11 13:10:52,371 - routers.py:26 - [WARNING] - SQL generation error: Multiple statements/semicolons are not allowed
+2025-12-11 13:13:33,176 - routers.py:26 - [WARNING] - SQL generation error: Multiple statements/semicolons are not allowed
+2025-12-11 13:20:21,442 - routers.py:26 - [WARNING] - SQL generation error: Multiple statements/semicolons are not allowed
+2025-12-11 13:21:51,337 - routers.py:26 - [WARNING] - SQL generation error: Multiple statements/semicolons are not allowed
+2025-12-11 13:30:07,612 - routers.py:26 - [WARNING] - SQL generation error: Query must reference at least one allowed table
+2025-12-11 13:33:00,875 - routers.py:26 - [WARNING] - SQL generation error: Query must reference at least one allowed table
+2025-12-11 13:34:55,562 - routers.py:26 - [WARNING] - SQL generation error: Query must reference at least one allowed table
+2025-12-11 13:39:44,688 - routers.py:26 - [WARNING] - SQL generation error: Query must reference at least one allowed table
+2025-12-11 13:40:45,681 - routers.py:38 - [ERROR] - Query execution error: Textual SQL expression 'SELECT AVG("BMI") FROM "h...' should be explicitly declared as text('SELECT AVG("BMI") FROM "h...')
+2025-12-11 15:08:41,792 - routers.py:38 - [ERROR] - Query execution error: Textual SQL expression 'SELECT AVG("BMI") FROM "h...' should be explicitly declared as text('SELECT AVG("BMI") FROM "h...')
+2025-12-11 15:28:18,470 - routers.py:30 - [INFO] - No data found: No data found for the given query
+2025-12-11 15:34:42,588 - routers.py:42 - [ERROR] - Unexpected error in /query endpoint: Object of type Decimal is not JSON serializable
+Traceback (most recent call last):
+  File "/Users/eserve/workspace/health_docter/apps/routers.py", line 22, in query_endpoint
+    result = handle_query(db, payload.question)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/workspace/health_docter/apps/service.py", line 154, in handle_query
+    answer = generate_answer(question, sql, rows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/workspace/health_docter/apps/service.py", line 130, in generate_answer
+    {json.dumps(rows, indent=2)}
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.11/3.11.10/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.11/3.11.10/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.11/3.11.10/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 430, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "/usr/local/Cellar/python@3.11/3.11.10/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/usr/local/Cellar/python@3.11/3.11.10/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/local/Cellar/python@3.11/3.11.10/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.11/3.11.10/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Decimal is not JSON serializable

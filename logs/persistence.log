@@ -1,0 +1,46 @@
+2025-12-11 13:40:45,669 - persistence.py:18 - [ERROR] - DB error while executing SQL
+Traceback (most recent call last):
+  File "/Users/eserve/workspace/health_docter/apps/persistence.py", line 14, in execute_raw_sql
+    result = db.execute(sql)
+             ^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2147, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT AVG("BMI") FROM "h...' should be explicitly declared as text('SELECT AVG("BMI") FROM "h...')
+2025-12-11 15:08:41,787 - persistence.py:18 - [ERROR] - DB error while executing SQL
+Traceback (most recent call last):
+  File "/Users/eserve/workspace/health_docter/apps/persistence.py", line 14, in execute_raw_sql
+    try:
+         
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2147, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT AVG("BMI") FROM "h...' should be explicitly declared as text('SELECT AVG("BMI") FROM "h...')

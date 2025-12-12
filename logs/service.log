@@ -1,0 +1,98 @@
+2025-12-11 13:40:22,654 - service.py:103 - [INFO] - Generated safe SQL for question 'What is the average BMI of female patients?': SELECT AVG("BMI") FROM "health_static" WHERE "Sex" = 0;
+2025-12-11 13:40:45,678 - service.py:146 - [ERROR] - SQL execution error
+Traceback (most recent call last):
+  File "/Users/eserve/workspace/health_docter/apps/persistence.py", line 14, in execute_raw_sql
+    result = db.execute(sql)
+             ^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2147, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT AVG("BMI") FROM "h...' should be explicitly declared as text('SELECT AVG("BMI") FROM "h...')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/eserve/workspace/health_docter/apps/service.py", line 144, in handle_query
+    rows = execute_raw_sql(db, sql)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/workspace/health_docter/apps/persistence.py", line 19, in execute_raw_sql
+    raise QueryExecutionError(str(e))
+apps.exceptions.QueryExecutionError: Textual SQL expression 'SELECT AVG("BMI") FROM "h...' should be explicitly declared as text('SELECT AVG("BMI") FROM "h...')
+2025-12-11 15:04:15,256 - service.py:103 - [INFO] - Generated safe SQL for question 'What is the average BMI of female patients?': SELECT AVG("BMI") FROM "health_static" WHERE "Sex" = 0;
+2025-12-11 15:08:41,790 - service.py:146 - [ERROR] - SQL execution error
+Traceback (most recent call last):
+  File "/Users/eserve/workspace/health_docter/apps/persistence.py", line 14, in execute_raw_sql
+    try:
+         
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2147, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/.local/share/virtualenvs/health_docter-61XS8Pxp/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT AVG("BMI") FROM "h...' should be explicitly declared as text('SELECT AVG("BMI") FROM "h...')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/eserve/workspace/health_docter/apps/service.py", line 144, in handle_query
+    rows = execute_raw_sql(db, sql)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eserve/workspace/health_docter/apps/persistence.py", line 19, in execute_raw_sql
+    logger.exception("DB error while executing SQL")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+apps.exceptions.QueryExecutionError: Textual SQL expression 'SELECT AVG("BMI") FROM "h...' should be explicitly declared as text('SELECT AVG("BMI") FROM "h...')
+2025-12-11 15:08:55,752 - service.py:103 - [INFO] - Generated safe SQL for question 'What is the average BMI of female patients?': SELECT AVG("BMI") FROM "health_static" WHERE "Sex" = 0;
+2025-12-11 15:09:13,324 - service.py:133 - [INFO] - Generated answer for question 'What is the average BMI of female patients?'
+2025-12-11 15:26:17,015 - service.py:103 - [INFO] - Generated safe SQL for question 'What is the average number of daily steps for patients who have abnormal blood pressure and are older than 50?': SELECT AVG("Physical_activity") AS average_daily_steps
+FROM "steps_daily" sd
+JOIN "health_static" hs ON sd."Patient_Number" = hs."Patient_Number"
+WHERE hs."Blood_Pressure_Abnormality" = 1 AND hs."Age" > 50;
+2025-12-11 15:28:18,468 - service.py:150 - [INFO] - No rows returned for query
+2025-12-11 15:28:42,630 - service.py:103 - [INFO] - Generated safe SQL for question 'What is the average number of daily steps for patients who have abnormal blood pressure and are older than 50?': SELECT AVG("Physical_activity") AS average_daily_steps
+FROM "steps_daily" sd
+JOIN "health_static" hs ON sd."Patient_Number" = hs."Patient_Number"
+WHERE hs."Blood_Pressure_Abnormality" = 1 AND hs."Age" > 50;
+2025-12-11 15:35:19,469 - service.py:103 - [INFO] - Generated safe SQL for question 'What is the average number of daily steps for patients who have abnormal blood pressure and are older than 50?': SELECT AVG("Physical_activity") AS average_daily_steps
+FROM "steps_daily" sd
+JOIN "health_static" hs ON sd."Patient_Number" = hs."Patient_Number"
+WHERE hs."Blood_Pressure_Abnormality" = 1 AND hs."Age" > 50;
+2025-12-11 15:35:27,047 - service.py:133 - [INFO] - Generated answer for question 'What is the average number of daily steps for patients who have abnormal blood pressure and are older than 50?'
+2025-12-11 15:54:26,939 - service.py:103 - [INFO] - Generated safe SQL for question 'What is the average salt intake of patients who have high stress and also walk more than 6000 steps per day': SELECT AVG("salt_content_in_the_diet") 
+FROM "health_static" 
+JOIN "steps_daily" ON "health_static"."Patient_Number" = "steps_daily"."Patient_Number" 
+WHERE "Level_of_Stress" > 7 AND "Physical_activity" > 6000;
+2025-12-11 15:54:28,743 - service.py:133 - [INFO] - Generated answer for question 'What is the average salt intake of patients who have high stress and also walk more than 6000 steps per day'
+2025-12-11 16:28:56,167 - service.py:103 - [INFO] - Generated safe SQL for question 'Among patients aged above 50, how many have both chronic kidney disease and adrenal/thyroid disorders?': SELECT COUNT(*) 
+FROM "health_static" 
+WHERE "Age" > 50 AND "Chronic_kidney_disease" = 1 AND "Adrenal_and_thyroid_disorders" = 1;
+2025-12-11 16:28:58,932 - service.py:133 - [INFO] - Generated answer for question 'Among patients aged above 50, how many have both chronic kidney disease and adrenal/thyroid disorders?'
+2025-12-11 18:23:43,951 - service.py:103 - [INFO] - Generated safe SQL for question 'Among patients aged above 50, how many have both chronic kidney disease and adrenal/thyroid disorders?': SELECT COUNT(*) 
+FROM "health_static" 
+WHERE "Age" > 50 AND "Chronic_kidney_disease" = 1 AND "Adrenal_and_thyroid_disorders" = 1;
+2025-12-11 18:23:46,241 - service.py:133 - [INFO] - Generated answer for question 'Among patients aged above 50, how many have both chronic kidney disease and adrenal/thyroid disorders?'
