@@ -1,4 +1,4 @@
-Health Doctor GenAI — Intelligent Health Data Analysis System
+**[Health Doctor GenAI — Intelligent Health Data Analysis System]**
 
 A development-ready GenAI-driven health analytics engine that can interpret natural language questions from users, generate safe SQL queries dynamically, fetch structured health data, and produce medically safe, context-aware insights and lifestyle recommendations.
 
