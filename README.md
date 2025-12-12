@@ -5,9 +5,10 @@ A development-ready GenAI-driven health analytics engine that can interpret natu
 Built using FastAPI, PostgreSQL, SQLAlchemy, and a trusted LLM (OpenAI-compatible).
 Designed with security, reliability, extendibility, and strict SQL-safety as top priorities.
 
---
-# Project Structure Overview
+---
 
+# Project Structure Overview
+```
 health_doctor_genai/
 ├── main.py
 ├── apps
@@ -29,3 +30,7 @@ health_doctor_genai/
 ├── loggers/
 │   └── logger.py           # Central logging config
 └── logs/                   # Runtime logs
+```
+
+---
+
