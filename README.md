@@ -86,3 +86,29 @@ health_doctor_genai/
 - Essential for debugging, audits, and enterprise readiness.
 
 ---
+
+# Installation & Setup
+
+## Clone the repository
+- git clone https://github.com/vijay-kumar-eservecloud/health_doctor_genai.git
+- cd health_doctor_genai
+
+## Create and activate virtual environment
+- python3 -m venv venv
+- source venv/bin/activate 
+
+## Install dependencies
+- pip install -r requirements.txt
+
+## Configure environment variables
+### Create a .env.local file:
+- DATABASE_URL=postgresql+psycopg2://postgres:password@localhost:5432/health_care_db
+- OPENAI_API_KEY=your_api_key_here   # DO NOT COMMIT THIS FILE
+
+## Load datasets into Postgres
+- python -m scripts.init_health_data
+
+## Start FastAPI server
+- uvicorn main:app --reload --env-file=.env.local
+
+
