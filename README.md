@@ -46,3 +46,43 @@ health_doctor_genai/
 
 ---
 
+# Health-Oriented Dataset Modeling
+
+##Dataset 1 – Patient Health Profile
+Hemoglobin
+BMI
+Genetic pedigree coefficient
+Stress levels
+Chronic kidney disease
+Thyroid/adrenal disorders
+Smoking/alcohol/salt consumption
+Age, Sex, Pregnancy
+
+##Dataset 2 – Patient Activity (10-day steps data)
+Patient_Number
+Day_Number
+Physical_activity
+Both datasets are stored in PostgreSQL and linked by Foreign Key.
+
+---
+
+# LLM-Generated Explanations with Medical Safety Guardrails
+
+The LLM never gives medical advice.
+Instead, it provides:
+Analytical summary
+General lifestyle recommendations
+Mandatory disclaimer:
+“This is not medical advice. Please consult a healthcare professional.”
+
+---
+
+# Fully Logged & Debuggable System
+
+Query logs
+SQL generation logs
+Validation errors
+Data ingestion logs
+Essential for debugging, audits, and enterprise readiness.
+
+---
