@@ -33,4 +33,16 @@ health_doctor_genai/
 ```
 
 ---
+## Technologies Used
+
+| Component      | Technology                               |
+| -------------- | ---------------------------------------- |
+| Backend API    | **FastAPI**                              |
+| Database       | **PostgreSQL + SQLAlchemy ORM**          |
+| Data Loading   | Pandas + SQLAlchemy                      |
+| AI Integration | OpenAI-compatible API (gpt-4o-mini etc.) |
+| SQL Safety     | Custom SQL validation layer              |
+| Logging        | Python logging framework                 |
+
+---
 
