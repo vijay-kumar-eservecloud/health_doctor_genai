@@ -129,5 +129,5 @@ health_doctor_genai/
 
 Vijay Kumar
 - AI Engineer | FastAPI | GenAI | RAG | LLM-Orchestration
-- GitHub: https://github.com/vijay-kumar-eservecloud
+- GitHub: https://github.com/vijay-kumar-eservecloud/health_doctor_genai
 
